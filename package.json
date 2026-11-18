@@ -1,7 +1,7 @@
 {
   "name": "@homebridge-plugins/homebridge-tuya",
   "displayName": "Homebridge Tuya",
-  "version": "2.7.1+co2.1",
+  "version": "2.7.1+aq.2",
   "description": "Forked from 0x5e/homebridge-tuya-platform, with a focus on fixing bugs and adding new device support.",
   "license": "MIT",
   "repository": {
@@ -20,7 +20,7 @@
   ],
   "engines": {
     "homebridge": "^1.8.0 || ^2.0.0",
-    "node": "^20 || ^22 || ^24 || ^25"
+    "node": "^20 || ^22 || ^24 || ^25 || ^26"
   },
   "peerDependencies": {
     "homebridge": "^1.8.0 || ^2.0.0"
