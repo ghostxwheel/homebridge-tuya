@@ -92,7 +92,7 @@ export function createDensityGetter(accessory: BaseAccessory, schema: TuyaDevice
   };
 }
 
-export function configureDensity(
+function configureDensity(
   accessory: BaseAccessory,
   service: Service,
   characteristic,
