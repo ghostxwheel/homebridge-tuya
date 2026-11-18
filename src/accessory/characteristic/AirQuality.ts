@@ -73,10 +73,12 @@ function configureDensity(
 
   const property = schema.property as TuyaDeviceSchemaIntegerProperty;
   const multiple = Math.pow(10, property ? property.scale : 0);
+  // HomeKit densities are in µg/m³; some devices (e.g. ch2o_value) report mg/m³.
+  const unitFactor = (property && property.unit && property.unit.toLowerCase().startsWith('mg')) ? 1000 : 1;
   service.getCharacteristic(characteristic)
     .onGet(() => {
       const status = accessory.getStatus(schema.code)!;
-      const value = limit(status.value as number / multiple, 0, 1000);
+      const value = limit(status.value as number / multiple * unitFactor, 0, 1000);
       return value;
     });
 }
